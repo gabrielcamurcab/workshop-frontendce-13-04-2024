@@ -1,0 +1,15 @@
+.wrapper {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  flex-basis: 500px;
+  padding: 2rem;
+}
+
+.header {
+  padding-top: 1rem;
+}
+
+.header h1 {
+  color: var(--coffee);
+  text-align: center;
+}

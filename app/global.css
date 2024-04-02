@@ -1,0 +1,105 @@
+:root {
+  /* colors */
+  --white: #ffffff;
+  --green: #333d29;
+  --coffee: #43281c;
+  --vanilla: #f1e3d3;
+  --lemon: #fbf2c0;
+  --mocha: #7f4f24;
+  --tan: #ddb892;
+  --blue: #3e80b6;
+
+  /* fonts */
+  --decorative: "Montserrat", sans-serif;
+  --sans: "Open Sans", sans-serif;
+
+  /* font scale */
+  --base-size: 1.2rem;
+  --scale: 1.25;
+  --xl: calc(var(--h1) * var(--scale) * var(--scale)); /* 7.15rem */
+  --lg: calc(var(--h1) * var(--scale)); /* 4.575rem */
+  --h1: calc(var(--h2) * var(--scale)); /* 3.66rem */
+  --h2: calc(var(--h3) * var(--scale)); /* 2.93rem */
+  --h3: calc(var(--h4) * var(--scale)); /* 2.34rem */
+  --h4: calc(var(--h5) * var(--scale)); /* 1.875rem */
+  --h5: calc(var(--h6) * var(--scale)); /* 1.5rem */
+  --h6: var(--base-size); /* 1.2rem */
+  --small: calc(var(--base-size) / var(--scale)); /* 0.96rem */
+
+  /* other variables */
+  --radius: 5px;
+}
+
+/* add border box sizing to the page right from the start */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--sans);
+  line-height: 1.5;
+  background-color: var(--vanilla);
+  color: var(--coffee);
+  font-size: var(--base-size);
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3 {
+  font-weight: 400;
+  font-family: var(--decorative);
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-size: var(--h1);
+  line-height: 1;
+  margin-bottom: var(--h2);
+}
+
+h2,
+.h2 {
+  font-size: var(--h2);
+  line-height: 1.1;
+  margin-bottom: var(--h3);
+}
+
+h3,
+.h3 {
+  font-size: var(--h3);
+  line-height: 1.2;
+  margin-bottom: var(--h4);
+}
+
+img {
+  max-width: 100%;
+  border-radius: var(--radius);
+}
+
+figure {
+  margin: 0;
+}
+
+a {
+  color: var(--green);
+}
+
+a:hover {
+  text-decoration: none;
+}

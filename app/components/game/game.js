@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Response } from "../response/response";
 import { Result } from "../result";
 import { Info } from "../info";
-import { check } from "../../utils/check";
+import isEqual from "../../utils/is-equal";
 
 export function Game({ initialQuestions = [] }) {
   const [questions, setQuestions] = useState(initialQuestions);
@@ -18,7 +18,7 @@ export function Game({ initialQuestions = [] }) {
 
   const handleSubmit = (response) => {
     const answer = question.realName
-    const isCorrect = check(response, answer)
+    const isCorrect = isEqual(response, answer)
     if (isCorrect) {
       setResult('Correct!')
     } else {

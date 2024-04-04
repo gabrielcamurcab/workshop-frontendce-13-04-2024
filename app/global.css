@@ -9,6 +9,12 @@
   --tan: #ddb892;
   --blue: #3e80b6;
 
+  --orange: rgb(255, 171, 51);
+  --black: rgb(19, 31, 36);
+  --gray: rgb(55, 70, 79);
+  --dark-gray: rgb(32, 47, 54);
+  --darker-gray: rgb(32, 47, 54);
+
   /* fonts */
   --decorative: "Montserrat", sans-serif;
   --sans: "Open Sans", sans-serif;
@@ -44,7 +50,7 @@ html {
 body {
   font-family: var(--sans);
   line-height: 1.5;
-  background-color: var(--coffee);
+  background-color: var(--black);
   color: var(--white);
   font-size: var(--base-size);
   margin: 0;

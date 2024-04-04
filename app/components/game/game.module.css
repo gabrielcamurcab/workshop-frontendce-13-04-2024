@@ -5,24 +5,6 @@
   padding: 24px 16px;
 }
 
-/* .question {
-  display: block;
-}
-
-.answer {
-  display: block;
-  margin: .5rem 0 1rem;
-  width: 100%;
-  border-radius: var(--radius);
-  border: 2px solid var(--coffee);
-  padding: .5em 1em;
-}
-
-.container {
-  display: flex;
-  flex: 1;
-} */
-
 .label {
   align-self: center;
   margin: 0 auto;
@@ -34,5 +16,4 @@
   .form {
     padding: 0;
   }
-
 }

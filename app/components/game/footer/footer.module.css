@@ -4,7 +4,7 @@
 }
 
 .footer--result {
-  background-color: var(--mocha);
+  background-color: var(--darker-gray);
 }
 
 .container {
@@ -16,7 +16,7 @@
 
 @media (min-width: 700px) {
   .footer {
-    border-top: 2px solid var(--mocha);
+    border-top: 2px solid var(--gray);
   }
 
   .container {

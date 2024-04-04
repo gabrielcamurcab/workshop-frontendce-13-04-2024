@@ -4,11 +4,15 @@
 
 .answer {
   display: block;
-  margin: .5rem 0 1rem;
+  margin: .5em 0 1em;
   width: 100%;
   border-radius: var(--radius);
-  border: 2px solid var(--coffee);
+  border: 2px solid var(--gray);
+  background-color: var(--dark-gray);
   padding: .5em 1em;
+  appearance: none;
+  color: var(--white);
+  font-size: 1.5rem;
 }
 
 .container {

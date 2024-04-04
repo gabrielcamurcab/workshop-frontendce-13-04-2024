@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Response } from "../response/response";
-import { Result } from "../result";
+import { useEffect, useRef, useState } from "react";
+import { Footer } from "./footer/footer";
+import { Question } from "./question/question";
 import { Info } from "../info";
 import isEqual from "../../utils/is-equal";
+import styles from "./game.module.css";
 
 export function Game({ initialQuestions = [] }) {
+  const inputRef = useRef();
   const [questions, setQuestions] = useState(initialQuestions);
   const [question, setQuestion] = useState({})
   const [result, setResult] = useState('')
@@ -16,7 +18,9 @@ export function Game({ initialQuestions = [] }) {
     ask()
   }, [])
 
-  const handleSubmit = (response) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const response = e.target.elements.answer.value;
     const answer = question.realName
     const isCorrect = isEqual(response, answer)
     if (isCorrect) {
@@ -25,6 +29,12 @@ export function Game({ initialQuestions = [] }) {
       setResult(`Wrong! The correct answer was ${answer}`)
     }
     ask()
+    resetForm();
+  }
+
+  function resetForm() {
+    inputRef.current.value = "";
+    inputRef.current.focus();
   }
 
   const ask = () => {
@@ -36,11 +46,16 @@ export function Game({ initialQuestions = [] }) {
     }
   }
 
+  if (!gameOver) {
+    return (
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <Question question={question} ref={inputRef} />
+        <Footer result={result} />
+      </form>
+    )
+  }
+
   return (
-    <>
-      {!gameOver && <Response question={`What is ${question.name}'s real name?`} callback={handleSubmit} />}
-      <Result message={result} />
-      {gameOver && <Info>Game Over, you scored 0 points</Info>}
-    </>
+    <Info>Game Over, you scored 0 points</Info>
   );
 }

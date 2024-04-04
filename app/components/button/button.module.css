@@ -1,8 +1,20 @@
 .button {
-  background-color: var(--coffee);
+  background-color: var(--blue);
   border-radius: var(--radius);
   border: none;
   color: var(--white);
   cursor: pointer;
   padding: 1rem 2rem;
+  z-index: 1;
+}
+
+.button--block {
+  min-width: 150px;
+  width: 100%;
+}
+
+@media (min-width: 700px) {
+  .button {
+    width: auto;
+  }
 }

@@ -1,0 +1,27 @@
+.footer {
+  margin-top: auto;
+  position: relative;
+}
+
+.footer--result {
+  background-color: var(--mocha);
+}
+
+.container {
+  display: flex;
+  justify-content: end;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 700px) {
+  .footer {
+    border-top: 2px solid var(--mocha);
+  }
+
+  .container {
+    align-items: center;
+    min-height: 140px;
+    padding: 0 40px;
+  }
+}

@@ -1,4 +1,4 @@
-function isEqual(value, other) {
+export function isEqual(value, other) {
   if (value === other) {
     return true
   }

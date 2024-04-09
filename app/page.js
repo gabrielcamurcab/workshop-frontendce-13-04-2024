@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Footer } from "./components/footer/footer";
 import { Question } from "./components/question/question";
 import { Info } from "./components/info";
-import isEqual from "./utils/is-equal";
+import { isEqual } from "./utils/is-equal";
 import styles from "./page.module.css";
 
 const initialQuestions = [

@@ -1,4 +1,4 @@
-export default function isEqual(value, other) {
+function isEqual(value, other) {
   if (value === other) {
     return true
   }

@@ -21,8 +21,12 @@ export default function Page() {
   const [gameOver, setGameOver] = useState(false)
 
   useEffect(() => {
-    ask()
-  }, [])
+    if (questions.length > 0) {
+      setQuestion(questions.slice(-1)[0])
+    } else {
+      setGameOver(true)
+    }
+  }, [questions])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,22 +38,13 @@ export default function Page() {
     } else {
       setResult(`Wrong! The correct answer was ${answer}`)
     }
-    ask()
+    setQuestions(questions.slice(0, -1))
     resetForm();
   }
 
   function resetForm() {
     inputRef.current.value = "";
     inputRef.current.focus();
-  }
-
-  const ask = () => {
-    if (questions.length > 0) {
-      setQuestion(questions.slice(-1)[0])
-      setQuestions(questions.slice(0, -1))
-    } else {
-      setGameOver(true)
-    }
   }
 
   if (!gameOver) {

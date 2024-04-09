@@ -11,36 +11,38 @@ const initialQuestions = [
   { name: "Superman", realName: "Clark Kent" },
   { name: "Wonder Woman", realName: "Diana Prince" },
   { name: "Batman", realName: "Bruce Wayne" },
-]
+];
 
 export default function Page() {
   const inputRef = useRef();
+  const [score, setScore] = useState(0);
   const [questions, setQuestions] = useState(initialQuestions);
-  const [question, setQuestion] = useState({})
-  const [result, setResult] = useState('')
-  const [gameOver, setGameOver] = useState(false)
+  const [question, setQuestion] = useState({});
+  const [result, setResult] = useState("");
+  const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
     if (questions.length > 0) {
-      setQuestion(questions.slice(-1)[0])
+      setQuestion(questions.slice(-1)[0]);
     } else {
-      setGameOver(true)
+      setGameOver(true);
     }
-  }, [questions])
+  }, [questions]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const response = e.target.elements.answer.value;
-    const answer = question.realName
-    const isCorrect = isEqual(response, answer)
+    const answer = question.realName;
+    const isCorrect = isEqual(response, answer);
     if (isCorrect) {
-      setResult('Correct!')
+      setResult("Correct!");
+      setScore(score + 1);
     } else {
-      setResult(`Wrong! The correct answer was ${answer}`)
+      setResult(`Wrong! The correct answer was ${answer}`);
     }
-    setQuestions(questions.slice(0, -1))
+    setQuestions(questions.slice(0, -1));
     resetForm();
-  }
+  };
 
   function resetForm() {
     inputRef.current.value = "";
@@ -53,10 +55,8 @@ export default function Page() {
         <Question question={question} ref={inputRef} />
         <Footer result={result} />
       </form>
-    )
+    );
   }
 
-  return (
-    <Info>Game Over, you scored 0 points</Info>
-  );
+  return <Info>Game Over, you scored {score} points</Info>;
 }

@@ -6,9 +6,6 @@
   cursor: pointer;
   padding: 1rem 2rem;
   z-index: 1;
-}
-
-.button--block {
   min-width: 150px;
   width: 100%;
 }

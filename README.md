@@ -1,75 +1,23 @@
-# Forca
+# Unit Testing React
 
-Teste de unidade
-Testar entradas e saídas
-Anatomia de um teste de unidade
+## How to run this project
 
-Aprender a testar funções puras, eventos
+Clone this repository to your local computer.
 
-Exercícios
-
-- Testar função de ocultar letras
-- Testar componente que exibe texto
-- atributos, estilos e classes
- - estado do boneco da forca
-
-Mocks
-- Evento de clique para adicionar verificar chamada de método
-- formulario
-
-Cobertura
-
-- Entendendo Cobertura de código
-
-Refletindo sobre o que testar e o objetivo dos testes
-
-- Refatorações são boas nesses casos?
-- Quem consegue me sugerir refatorações para melhorar o código?
-
-Começar com useMemo e refatorar para o Effect para fazer o teste passar:
-shows game over message after answer the last question
-```js
-"use client";
-
-import { useMemo, useState } from "react";
-import { Score } from "./score";
-import { Response } from "./response";
-import { Result } from "./result";
-import { Info } from "./info";
-
-export function Game({ initialQuestions = [] }) {
-  const [questions, setQuestions] = useState(initialQuestions);
-  const [result, setResult] = useState('')
-
-  const question = useMemo(() => (questions.length > 0) ? questions.slice(-1)[0] : {}, [questions]);
-
-  const handleSubmit = (response) => {
-    const answer = question.realName
-    if (response === answer) {
-      setResult('Correct!')
-    } else {
-      setResult(`Wrong! The correct answer was ${answer}`)
-    }
-    setQuestions(questions.slice(0, -1))
-  }
-
-  return (
-    <>
-      <Score />
-      <Response question={`What is ${question.name}'s real name?`} callback={handleSubmit} />
-      <Result message={result} />
-      <Info />
-    </>
-  );
-}
+```bash
+git clone git@github.com:felipecesr/unit-testing-react.git
 ```
 
+From the command line, run the development server:
 
-- mocks
- - palavras vindo de api ou storage
-- testing library
-- Boas práticas
+```bash
+npm run dev
+```
 
-Comportamentos
+## Solutions
 
-Integração?
+All of the solutions are on the solutions branch. You can access them by using the following command:
+
+```bash
+git checkout solutions
+```

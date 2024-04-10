@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Footer } from "./components/footer/footer";
 import { Question } from "./components/question/question";
-import { Info } from "./components/info";
+import { Info } from "./components/info/info";
 import { isEqual } from "./utils/is-equal";
 import styles from "./page.module.css";
 
@@ -58,5 +58,5 @@ export default function Page() {
     );
   }
 
-  return <Info>Game Over, you scored {score} points</Info>;
+  return <Info />;
 }

@@ -10,16 +10,14 @@ Clone this repository to your local computer.
 git clone git@https://github.com/gabrielcamurcab/workshop-frontendce-13-04-2024
 ```
 
+From the command line, run tests:
+
+```bash
+npm test
+```
+
 From the command line, run the development server:
 
 ```bash
 npm run dev
-```
-
-### Solutions
-
-All of the solutions are on the solutions branch. You can access them by using the following command:
-
-```bash
-git checkout solutions
 ```
